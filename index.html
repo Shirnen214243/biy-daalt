@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="mn">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CV - Бат-Эрдэнэ</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="fade-in">
+    <img src="https://i.imgur.com/UV7vXxo.png" alt="Profile" class="profile-pic" />
+    <h1>Бат-Эрдэнэ</h1>
+    <h3>Програм хангамжийн оюутан</h3>
+    <nav>
+      <ul>
+        <li><a href="#home">Нүүр</a></li>
+        <li><a href="#about">Тухай</a></li>
+        <li><a href="#skills">Чадвар</a></li>
+        <li><a href="#projects">Төслүүд</a></li>
+        <li><a href="#contact">Холбоо</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section id="home" class="fade-in">
+    <h2>Welcome 👋</h2>
+    <p>IT-д дуртай, бүтээлч сэтгэлгээтэй нэгэн. Full-stack хөгжүүлэлт, UI/UX-д сонирхолтой.</p>
+  </section>
+
+  <section id="about" class="fade-in">
+    <h2>Миний тухай</h2>
+    <p>Програм хангамжийн чиглэлээр их сургуульд сурч байгаа. Front-end болон Back-end хөгжүүлэлтийн төслүүд дээр ажиллаж байсан туршлагатай.</p>
+  </section>
+
+  <section id="skills" class="fade-in">
+    <h2>Чадварууд</h2>
+    <ul>
+      <li>HTML, CSS, JavaScript</li>
+      <li>PHP, Python, MySQL</li>
+      <li>AJAX, jQuery, Bootstrap</li>
+    </ul>
+  </section>
+
+  <section id="projects" class="fade-in">
+    <h2>Төслүүд</h2>
+    <p>⏺ Онлайн номын дэлгүүр (AJAX, jQuery)<br>
+       ⏺ Цаг бүртгэлийн систем (PHP, MySQL)<br>
+       ⏺ CV вэб хуудас (HTML/CSS/Animation)</p>
+  </section>
+
+  <section id="contact" class="fade-in">
+    <h2>Холбоо барих</h2>
+    <p>📧 enkhjin.bat@gmail.com<br>📱 99110022</p>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Бат-Эрдэнэ | CV</p>
+  </footer>
+
+  <script>
+    const faders = document.querySelectorAll('.fade-in');
+    const appearOptions = { threshold: 0.3, rootMargin: "0px 0px -50px 0px" };
+    const appearOnScroll = new IntersectionObserver(function(entries, observer) {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add("appear");
+        observer.unobserve(entry.target);
+      });
+    }, appearOptions);
+    faders.forEach(fader => appearOnScroll.observe(fader));
+  </script>
+</body>
+</html>
